@@ -1,10 +1,10 @@
 import mysql from 'mysql'
 
 export const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "4xfrenchies"
+    host: "89.117.169.15",
+    user: "u457975983_Omar",
+    password: "Omar1234$",
+    database: "u457975983_4xfrenchies"
 })
 
 try{
