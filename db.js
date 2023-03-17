@@ -1,22 +1,22 @@
 import mysql from 'mysql'
 
-export const db = mysql.createConnection({
+
+export const db = mysql.createPool({
+    connectionLimit: 10,
+    acquireTimeout: 10000,
     host: "89.117.169.15",
     user: "u457975983_Omar",
     password: "Omar1234$",
     database: "u457975983_4xfrenchies"
 })
 
-try{
-    db.connect(function (err) {
-        if (err) {
-            console.log('Error occured in Database: ' + err);
-        } else {
-            console.log("Connected to Database");
-        }
+db.on('connection', function(connection){
+    console.log('db connected')
+    connection.on('error', function(err){
+        console.log(new Date(), 'MySQL Error', err.code);
     });
-}
-catch(err){
-    console.log(err)
-}
+    connection.on('close', function(err){
+        console.error(new Date(), 'MySQL Close', err);
+    });
+});
 
