@@ -24,7 +24,7 @@ db.on('connection', function (connection) {
         console.log(new Date(), 'MySQL Error', err.code);
     });
     connection.on('close', function (err) {
-        console.error(new Date(), 'MySQL Close', err);
+        console.error(new Date(), 'MySQL Closse', err);
     });
 });
 
