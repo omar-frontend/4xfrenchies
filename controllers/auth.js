@@ -18,9 +18,5 @@ export const login = (req, res) => {
         const { password, ...others } = data[0]
         res.cookie("accessToken", token).status(200)
             .json(others);
-
-
     })
-
-
 }
