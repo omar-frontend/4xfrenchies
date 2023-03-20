@@ -21,7 +21,8 @@ app.use(
     cors({
         methods: ["GET", "POST", "DELETE", "PUT"],
         credentials: true,
-        origin: ["http://localhost:5174","http://localhost:5175"]
+        // origin: ["http://localhost:5174", "http://localhost:5175"]
+        origin: ["https://4xfrenchies.com", "https://admin.4xfrenchies.com"]
     })
 )
 
