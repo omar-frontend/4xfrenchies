@@ -1,5 +1,7 @@
 import { db } from '../db.js'
 
+
+
 export const post = (req, res) => {
     const q = "SELECT * FROM blogs"
     db.query(q, (err, data) => {
@@ -16,13 +18,7 @@ export const id = (req, res) => {
     })
 }
 
-export const addPost = (req, res) => {
-    const values = [req.body.blog_title, req.body.blog_body]
-    db.query("INSERT INTO blogs (blog_title, blog_body) VALUES (?)", [values], (err, data) => {
-        if (err) return res.status(500).json(err)
-        return res.status(200).json("blog added!")
-    })
-}
+
 
 export const updatePost = (req, res) => {
     const id = req.params.id;
