@@ -29,11 +29,13 @@ router.post("/add", upload, (req, res) => {
     var filename = [];
     arr.forEach(ar => filename.push(ar.filename))
     const files = filename.toString();
-    var d = req.body
-    const obj = JSON.parse(JSON.stringify(req.body));
+    var d = req.body.inputs
+    // DATA
+    var e = JSON.parse(d)
+
     // DATA
     try {
-        const values = [obj.pet_name, obj.price, obj.pet_weight, obj.pet_date, obj.pet_gender, obj.pet_color, obj.pet_desc, files]
+        const values = [e.pet_name, e.price, e.pet_weight, e.pet_date, e.pet_gender, e.pet_color, e.pet_desc, files]
         const query = "INSERT INTO pets (pet_name, price, pet_weight, pet_date, pet_gender, pet_color, pet_desc, pet_imgs) VALUES (?)"
         db.query(query, [values], (err, data) => {
             if (err) return res.status(500).json(err)
