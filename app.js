@@ -35,7 +35,6 @@ app.use("/api/faq", questionsRoutes)
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-console.log(path)
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
 app.get("/", (req, res) => {

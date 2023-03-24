@@ -13,7 +13,7 @@ function between(min, max) {
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, '../ui/public/uploads')
+        cb(null, '../../ui/public/uploads')
     },
     filename: (req, file, cb) => {
         const randomNumber = between(10, 200);
