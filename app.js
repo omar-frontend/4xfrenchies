@@ -24,11 +24,11 @@ app.use(
     cors({
         methods: ["GET", "POST", "DELETE", "PUT"],
         credentials: true,
-        // origin: ["http://localhost:5174", "http://localhost:5175"]
+        // origin: ["http://localhost:5174", "http://localhost:5175","http://192.168.1.34:5173"]
         origin: ["https://4xfrenchies.com", "https://admin.4xfrenchies.com"]
     })
 )
-
+app.use("/api/auth", authRoutes)
 app.use("/api/blog", blogRoutes)
 app.use("/api/pet", petsRoutes)
 app.use("/api/faq", questionsRoutes)
